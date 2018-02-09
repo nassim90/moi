@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+  
+
+{% block body %}
+    
+
+    l'url is :{{ url}} <br><br><br>
+    
+     
+     and title is :{{ title}}<br><br><br>
+     
+     and h1 is :{{ h1}}<br><br><br>
+    
+        and meta is : <div>{{  tags |json_encode() |raw }}</div><br><br><br>
+        
+   
+ 
+   
+        and img is : <div>{{ img |nl2br |replace({'[[["':'' ,'\""]': '' , '\],[[],[],[]],[[],[],[]],[[],[],[]],[[],[],[]],[[],[],[]],[["': '',
+                                  '[[:blank:]]':''})}}</div>
+                                  
+                                  
+     
+     {% endblock %}
+     
+     
+     
+     
+</html>
+    
+ %}

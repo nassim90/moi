@@ -1,0 +1,17 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+form:
+    path:     /form
+    defaults: { _controller: AppBundle:Default:form }
+    
+title:
+    path:     /result
+    defaults: { _controller: AppBundle:Default:title }
+    
+longTask:
+    path:     /result
+    defaults: { _controller: AppBundle:Default:longTask }   
+    
+   
