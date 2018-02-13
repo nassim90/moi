@@ -67,19 +67,20 @@ public function titleAction(Request $request)
         $tags ['description'] = get_meta_tags($url);
        
       
+        
  
         //print img
        
         
-        preg_match_all('/<img[^>]+>/i',$data, $crawler); 
-       
-        $img = json_encode($crawler);
-        
-       foreach( $crawler[0] as $img){
-            preg_match_all('/(alt)=("[^"]*")/i',$img, $alt_img[]);
-           
-       }
-     
+
+
+          $alts = preg_match('/(https?:\/\/.*\.(?:png|jpg))/i', $data, $matches) ? $matches[1] : null;
+
+    
+          $alts .= $img = preg_match('/<img.*?alt="(.*?)"[^\>]+>/i', $data, $matches) ? $matches[1] : null;
+
+   
+
 
     
         return $this->render('result.html.twig', array(

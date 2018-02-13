@@ -10,29 +10,44 @@
   
 
 {% block body %}
-    
+   
+   
+ 
+   
 
-    l'url is :{{ url}} <br><br><br>
+    l'url is :{{ url }} <br><br><br>
     
      
      and title is :{{ title}}<br><br><br>
      
-     and h1 is :{{ h1}}<br><br><br>
-    
-        and meta is : <div>{{  tags |json_encode() |raw  }}</div><br><br><br>
-         
-   
- 
-   
-        and img is : <div>{{ img |json_encode() |replace({'\" \/>"': '' , '\"': "", '\ \/>':'','\ \/>':'','<':'', 'img src=\images\/team.jpg\ ' : "" })  }}</div>
-                                  
-                                  
      
-     {% endblock %}
+     and h1 is :{{ h1}}<br><br><br>
+   
+   
+     {% for tag in tags %}
+       and description  is :{{ tag.description|e }}<br><br><br>
+      {% else %}
+        <li><em>no description found</em></li>
+    {% endfor %}  
+   
+   
+    {% for tag in tags %}
+ 
+       and images  is :{{  img  }}
+   
+    {% else %}
+        <li><em>no alt found</em></li>
+    {% endfor %}  
+     
+       
+       
+       
+       
+    
+{% endblock %}
      
      
      
      
 </html>
     
- %}
