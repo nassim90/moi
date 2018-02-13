@@ -19,13 +19,12 @@
      
      and h1 is :{{ h1}}<br><br><br>
     
-        and meta is : <div>{{  tags |json_encode() |raw }}</div><br><br><br>
-        
+        and meta is : <div>{{  tags |json_encode() |raw  }}</div><br><br><br>
+         
    
  
    
-        and img is : <div>{{ img |nl2br |replace({'[[["':'' ,'\""]': '' , '\],[[],[],[]],[[],[],[]],[[],[],[]],[[],[],[]],[[],[],[]],[["': '',
-                                  '[[:blank:]]':''})}}</div>
+        and img is : <div>{{ img |json_encode() |replace({'\" \/>"': '' , '\"': "", '\ \/>':'','\ \/>':'','<':'', 'img src=\images\/team.jpg\ ' : "" })  }}</div>
                                   
                                   
      

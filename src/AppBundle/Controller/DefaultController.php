@@ -61,32 +61,33 @@ public function titleAction(Request $request)
        // print h1
         $h1= preg_match('/<h1[^>]*>(.*?)<\/h1>/ims', $data, $matches) ? $matches[1] : null;
         
-        
+         
          //print meta
-        
-        $tags['description'] = get_meta_tags($url);
+         
+        $tags ['description'] = get_meta_tags($url);
+       
       
  
         //print img
-        $crawler = (string) $data;
+       
         
         preg_match_all('/<img[^>]+>/i',$data, $crawler); 
        
         $img = json_encode($crawler);
         
-        foreach( $crawler[0] as $img_tag){
-            preg_match_all('/(alt)=("[^"]*")/i',$img_tag, $alt_img[]);
+       foreach( $crawler[0] as $img){
+            preg_match_all('/(alt)=("[^"]*")/i',$img, $alt_img[]);
            
-        }
-        
-        $alt_img = json_encode($alt_img);
+       }
+     
+
     
         return $this->render('result.html.twig', array(
             'url' => $url,
             'title' => $title,
             'h1' => $h1,
-            'img' => $alt_img,
             'tags' => $tags,
+            'img' => $img,
            
            
       
