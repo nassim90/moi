@@ -11,9 +11,9 @@
     <div class="well">
         {{ form(form) }}
         
-    </div>
+  
 
-     and h1 is :{{ h1}}<br><br><br>
+     {# and h1 is :{{ h1}}<br><br><br>
 
   
 and alt is : 
@@ -25,7 +25,7 @@ and alt is :
      {% else %}
         <li><em>no alt found</em></li>
     {% endfor %}
-</ol>
+</ol>#}
    
 
 <!-- BEGIN GOOGLE CONTENT -->
@@ -119,16 +119,7 @@ and alt is :
                 <div id="topspons">
                     <h2 style="float:right;font-weight:normal;padding:1px 0 1px 1px;font-size:11px;margin:3px 0 0">Sponsored links</h2>
                 </div>
-                <ol style="padding:3px 0">
-                    <li class="taf">
-                        <h3><a href="#" id="pa1" onclick="return false;">Don't Believe <b>SEO</b> Hype!</a></h3>
-                        <cite><b>SEO</b>Bullshit.com/</cite>&nbsp; &nbsp; &nbsp; If it's about <b>SEO</b> and it's here... It's probably bullshit.
-                    </li>
-                    <li class="tal">
-                        <h3><a href="#" id="pa2" onclick="return false;">Hottest <b>SEO</b> in the <b>World</b>?</a></h3>
-                        <cite>Twitter.com/<b>SEO</b>mofo</cite>&nbsp; &nbsp; &nbsp; The only thing hotter than this <b>SEO</b> is his search engine optimization!
-                    </li>
-                </ol>
+                
             </div>
         </div>
 
@@ -141,14 +132,14 @@ and alt is :
                            
                             <li class="g">
                                 <div class="vsc">
-                                    <h3 class="r"><a href="#" onclick="return false;" class="l"><span id="out_title">{{ title}}</span></a></h3>
+                                    <h3 class="r"><a href="#" onclick="return false;" class="l"><span id="out_title">{{ title}} </span></a></h3>
                                     <div class="s">
                                         <div class="f kv">
                                             <cite><span id="out_url">{{ url }}</span><span id="out_dash1"></span></cite>
                                         </div>
                                         <div class="f kv">
                                             <div class="f" id="out_richsnippet">
-                                            <div id="out_stars">
+                                            
                                                 <table border="0" cellpadding="0" cellspacing="0" class="ti" style="height:px;width:px">
                                                     <tbody>
                                                         <tr>
@@ -158,21 +149,20 @@ and alt is :
                                                             <td><p style="height:9px;width:10px;margin:0;padding:0;position:relative;overflow:hidden"> <img alt="" src="images/srpr/nav_logo13.png" style="left:0px;position:absolute;top:-110px"/> </p></td>
                                                             <td><p style="height:9px;width:10px;margin:0;padding:0;position:relative;overflow:hidden"> <img alt="" src="images/srpr/nav_logo13.png" style="left:-117px;position:absolute;top:-107px"/> </p></td>
                                                         </tr>
-                                                    </tbody>
+                                                    </tbody> 
+                                                    {% for tag in tags %} 
+                                                    {{ tag.description  }}
+                                                    {% else %} 
+                                                    {{ tags  }}
+                                                    {% endfor %}  
                                                 </table>
                                             </div>
-                                                <span id="out_richtext">{% for tag in tags %} {{ tag.description|e }}
-                                                                                     {% else %}
-                                                                              <li><em>no description found</em></li>
-                                                                               {% endfor %}  </span><br />
-                                            </div>
-                                            <span id="out_datesnip"><span class="mofo_date"><span id="out_date"></span><span id="out_datedots">&nbsp;-&nbsp;</span></span><span class="mofo_snippet"><span id="out_snippet">Here is an example of what a snippet looks like in Google's SERPs. The content that appears here is usually taken from the Meta Description tag if relevant.</span></span></span>
+                                            <span id="out_datesnip"><span class="mofo_date"><span id="out_date"></span></span><span class="mofo_snippet"></span></span>
                                             <span class="gl"><span id="out_cached"></span><span id="out_dash2"></span><span id="out_similar"></span></span>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            
                         </ol>
                     </div>
 
@@ -340,6 +330,7 @@ and alt is :
     </div>
 </div>
  </div> 
+                                             </div> 
 <!-- END GOOGLE CONTENT -->
 {% endblock %}
      

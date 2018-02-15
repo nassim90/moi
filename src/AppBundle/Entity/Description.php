@@ -4,8 +4,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Description
  *
- * @ORM\Table(name="url")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UrlRepository")
+ * @ORM\Table(name="Description")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\DescriptionRepository")
  */
 class Description
 {
@@ -15,15 +15,50 @@ class Description
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * 
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Url", cascade={"persist"})
      */
+    private $url;
+    
+    
+    
     private $id;
     /**
      * @var string
      *
-     * @ORM\Column(name="url", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    private $title;
-   
+    private $title= null;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255)
+     */
+    private $description= null;
+    
+     /**
+     * Get url
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+    
+   /**
+     * Set url
+     *
+     * @param string $url
+     *
+     * @return Url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+        return $this;
+    }
     /**
      * Get id
      *
@@ -36,13 +71,13 @@ class Description
     /**
      * Set title
      *
-     * @param string $url
+     * @param string $title
      *
-     * @return Url
+     * @return title
      */
     public function setTitle($title)
     {
-        $this->url = $url;
+        $this->title = $title;
         return $this;
     }
     /**
@@ -52,9 +87,22 @@ class Description
      */
     public function getTitle()
     {
-        return $this->url;
+        return $this->title;
     }
     
-    
+    public function setDescription($description)
+    {
+        $this->description = $description;
+        return $this;
+    }
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
     
 }

@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Url;
 use AppBundle\Entity\Description;
-use AppBundle\Form\UrlType;
+use AppBundle\Form\FirstType;
 use AppBundle\Form\ModifType;
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -26,7 +26,7 @@ public function indexAction(Request $request)
 public function formAction(Request $request)
     {
          $url = new Url();
-         $form = $this->get('form.factory')->create(UrlType::class, $url);
+         $form = $this->get('form.factory')->create(FirstType::class, $url);
 
     if ($request->isMethod('POST')){
         $form->handleRequest($request);
@@ -73,26 +73,31 @@ public function titleAction(Request $request)
           $img = preg_match('/(https?:\/\/.*\.(?:png|jpg))/i', $data, $matches) ? $matches[1] : null;
                  $alts = preg_match_all('/<img.*?alt="(.*?)"[^\>]+>/i', $data, $matches) ? $matches[1] : null;
                  
-                 
-        $form = $this->get('form.factory')->create(ModifType::class);
+        // create a new form   
+        $description = new Description();        
+        $form = $this->get('form.factory')->create(ModifType::class, $description);
 
     if ($request->isMethod('POST')){
         $form->handleRequest($request);
-        
-       
+ 
         if ($form->isValid()) {
 
-        $url = $form->setData();
-        $session = $request->setSession();
-        $session->set('url', $url);
-        $session->set('description', $tags);
-        $session->set('title', $title);
+        $description = $form->getData();
+        $session = $request->getSession();
+        $session->set('description', $description); 
+        $session = $request->getSession();
+        $description = $session->get('description');
         
+        $tags= $description->getDescription();
+        $title= $description->getTitle();
+        $url= $description->getUrl();
         
+       
+       
     }
         }
-         
-
+             
+  
         return $this->render('result.html.twig', array(
             'url' => $url,
             'title' => $title,
@@ -105,4 +110,5 @@ public function titleAction(Request $request)
         ));   
     }
 
+ 
 }

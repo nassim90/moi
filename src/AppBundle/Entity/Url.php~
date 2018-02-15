@@ -56,7 +56,7 @@ class Url
         return $this;
     }
     /**
-     * Get url
+     * Get civilite
      *
      * @return string
      */

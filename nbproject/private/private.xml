@@ -7,7 +7,6 @@
             <file>file:/C:/xampp/htdocs/my_project/app/config/parameters.yml.dist</file>
             <file>file:/C:/xampp/htdocs/my_project/app/Resources/views/result.html.twig</file>
             <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Entity/Description.php</file>
-            <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Controller/SeoController.php</file>
             <file>file:/C:/xampp/htdocs/my_project/composer.json</file>
             <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Controller/DefaultController.php</file>
             <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/AppBundle.php</file>
@@ -17,14 +16,16 @@
             <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Repository/UrlRepository.php</file>
             <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Service/Title.php</file>
             <file>file:/C:/xampp/htdocs/my_project/app/Resources/views/base.html.twig</file>
+            <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Form/ModifType.php</file>
             <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Form/UrlType.php</file>
             <file>file:/C:/xampp/htdocs/my_project/app/config/services.yml</file>
-            <file>file:/C:/xampp/htdocs/my_project/web/css/logo-nav.css</file>
             <file>file:/C:/xampp/htdocs/my_project/vendor/composer/autoload_files.php</file>
+            <file>file:/C:/xampp/htdocs/my_project/web/css/google2.css</file>
             <file>file:/C:/xampp/htdocs/my_project/vendor/composer/autoload_namespaces.php</file>
             <file>file:/C:/xampp/htdocs/my_project/app/AppKernel.php</file>
             <file>file:/C:/xampp/htdocs/my_project/app/config/parameters.yml</file>
             <file>file:/C:/xampp/htdocs/my_project/app/config/security.yml</file>
+            <file>file:/C:/xampp/htdocs/my_project/web/css/font-awesome.css</file>
             <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Entity/Url.php</file>
         </group>
     </open-files>
