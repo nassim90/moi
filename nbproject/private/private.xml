@@ -2,31 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Ressource/config/services.yml</file>
-            <file>file:/C:/xampp/htdocs/my_project/app/config/parameters.yml.dist</file>
-            <file>file:/C:/xampp/htdocs/my_project/app/Resources/views/result.html.twig</file>
-            <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Entity/Description.php</file>
-            <file>file:/C:/xampp/htdocs/my_project/composer.json</file>
-            <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Controller/DefaultController.php</file>
-            <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/AppBundle.php</file>
-            <file>file:/C:/xampp/htdocs/my_project/app/Resources/views/default/index.html.twig</file>
-            <file>file:/C:/xampp/htdocs/my_project/app/config/routing.yml</file>
-            <file>file:/C:/xampp/htdocs/my_project/app/config/config.yml</file>
-            <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Repository/UrlRepository.php</file>
-            <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Service/Title.php</file>
-            <file>file:/C:/xampp/htdocs/my_project/app/Resources/views/base.html.twig</file>
-            <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Form/ModifType.php</file>
-            <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Form/UrlType.php</file>
-            <file>file:/C:/xampp/htdocs/my_project/app/config/services.yml</file>
-            <file>file:/C:/xampp/htdocs/my_project/vendor/composer/autoload_files.php</file>
-            <file>file:/C:/xampp/htdocs/my_project/web/css/google2.css</file>
-            <file>file:/C:/xampp/htdocs/my_project/vendor/composer/autoload_namespaces.php</file>
-            <file>file:/C:/xampp/htdocs/my_project/app/AppKernel.php</file>
-            <file>file:/C:/xampp/htdocs/my_project/app/config/parameters.yml</file>
-            <file>file:/C:/xampp/htdocs/my_project/app/config/security.yml</file>
-            <file>file:/C:/xampp/htdocs/my_project/web/css/font-awesome.css</file>
-            <file>file:/C:/xampp/htdocs/my_project/src/AppBundle/Entity/Url.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

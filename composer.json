@@ -15,41 +15,23 @@
     },
     "require": {
         "php": ">=5.5.9",
-        "burgov/key-value-form-bundle": "@stable",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
         "incenteev/composer-parameter-handler": "^2.0",
-        "leafo/scssphp": "~0.6",
-        "patchwork/jsqueeze": "~1.0",
+        "knplabs/knp-snappy-bundle": "^1.4",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^5.0.0",
-        "sonata-project/admin-bundle": "^3.23",
-        "sonata-project/seo-bundle": "^2.2",
-        "symfony/assetic-bundle": "^2.7.1",
-        "symfony/css-selector": "^2.8",
-        "symfony/dom-crawler": "^2.8",
+        "symfony/assetic-bundle": "^2.8",
         "symfony/monolog-bundle": "^3.1.0",
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.6.4",
         "symfony/symfony": "3.4.*",
-        "twbs/bootstrap": "^4.0",
-        "twig/extensions": "^1.5",
-        "twig/twig": "^1.0||^2.0"
-        
+        "twig/twig": "^1.0||^2.0",
+        "dompdf/dompdf": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.2"
-       
-    },
-    "suggest": {
-        "symfony-cmf/core-bundle": "When using the provided PHPCR-ODM document",
-        "symfony-cmf/routing-bundle": "To make use of the alternate locale provider.",
-        "doctrine/phpcr-bundle": "To persist the metadata in PHPCR ODM documents",
-        "doctrine/doctrine-bundle": "To persist the metadata in ORM entities",
-        "doctrine/orm": "To persist the metadata in ORM entities, ~2.4",
-        "burgov/key-value-form-bundle": "To have advanced editing options in the SEO form type, ^1.0",
-        "symfony-cmf/sonata-admin-integration-bundle": "To provide an admin interface for the PHPCR ODM documents."
+        "symfony/phpunit-bridge": "^3.0"
     },
     "scripts": {
         "symfony-scripts": [

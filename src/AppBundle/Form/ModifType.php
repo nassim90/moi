@@ -14,17 +14,9 @@ class ModifType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('title')
-                ->add('Description',TextareaType::class, array(
-    'attr' => array(
-        'min' => 5,
-        'max' => 55
-    )))
+                ->add('description')
                        
-                ->add('url',UrlType::class) 
-
-                
-                ->add('send', SubmitType::class, array(
-                      'attr' => array('class' => 'send')));
+                ->add('url',UrlType::class) ;
     }
     /**
      * {@inheritdoc}

@@ -9,8 +9,10 @@
     <h3>Modif Form</h3>
 
     <div class="well">
-        {{ form(form) }}
+        {{ form(form) }}  <div id="textarea_feedback"></div>
         
+      
+    <a href=" pdf.html ">Print PDF</a>
   
 
      {# and h1 is :{{ h1}}<br><br><br>
@@ -151,7 +153,7 @@ and alt is :
                                                         </tr>
                                                     </tbody> 
                                                     {% for tag in tags %} 
-                                                    {{ tag.description  }}
+                                                        {{ tag.description   }}
                                                     {% else %} 
                                                     {{ tags  }}
                                                     {% endfor %}  
@@ -165,7 +167,45 @@ and alt is :
                             </li>
                         </ol>
                     </div>
-
+                                                
+                    <div id="ires">
+                        <ol>
+                           
+                            <li class="g">
+                                <div class="vsc">
+                                    <h3 class="r"><a href="#" onclick="return false;" class="l"><span id="out_title">{{ title}} </span></a></h3>
+                                    <div class="s">
+                                        <div class="f kv">
+                                            <cite><span id="out_url">{{ url }}</span><span id="out_dash1"></span></cite>
+                                        </div>
+                                        <div class="f kv">
+                                            <div class="f" id="out_richsnippet">
+                                            
+                                                <table border="0" cellpadding="0" cellspacing="0" class="ti" style="height:px;width:px">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><p style="height:9px;width:10px;margin:0;padding:0;position:relative;overflow:hidden"> <img alt="Rated 4.5 out of 5.0" src="images/srpr/nav_logo13.png" style="left:0px;position:absolute;top:-110px"/> </p></td>
+                                                            <td><p style="height:9px;width:10px;margin:0;padding:0;position:relative;overflow:hidden"> <img alt="" src="images/srpr/nav_logo13.png" style="left:0px;position:absolute;top:-110px"/> </p></td>
+                                                            <td><p style="height:9px;width:10px;margin:0;padding:0;position:relative;overflow:hidden"> <img alt="" src="images/srpr/nav_logo13.png" style="left:0px;position:absolute;top:-110px"/> </p></td>
+                                                            <td><p style="height:9px;width:10px;margin:0;padding:0;position:relative;overflow:hidden"> <img alt="" src="images/srpr/nav_logo13.png" style="left:0px;position:absolute;top:-110px"/> </p></td>
+                                                            <td><p style="height:9px;width:10px;margin:0;padding:0;position:relative;overflow:hidden"> <img alt="" src="images/srpr/nav_logo13.png" style="left:-117px;position:absolute;top:-107px"/> </p></td>
+                                                        </tr>
+                                                    </tbody> 
+                                                    {% for tag in tags %} 
+                                                        {{ tag.description   }}
+                                                    {% else %} 
+                                                    {{ tags  }}
+                                                    {% endfor %}  
+                                                </table>
+                                            </div>
+                                            <span id="out_datesnip"><span class="mofo_date"><span id="out_date"></span></span><span class="mofo_snippet"></span></span>
+                                            <span class="gl"><span id="out_cached"></span><span id="out_dash2"></span><span id="out_similar"></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
                     <!--
                     <div id="brs" style="clear:both;margin-bottom:17px;overflow:hidden">
                         <div class="med" style="text-align:left">
@@ -330,7 +370,8 @@ and alt is :
     </div>
 </div>
  </div> 
-                                             </div> 
+                                                
+</div> 
 <!-- END GOOGLE CONTENT -->
 {% endblock %}
      

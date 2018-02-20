@@ -10,6 +10,8 @@ use AppBundle\Entity\Description;
 use AppBundle\Form\FirstType;
 use AppBundle\Form\ModifType;
 use Symfony\Component\DomCrawler\Crawler;
+use Knp\Snappy\Pdf;
+use Dompdf\Dompdf;
 
 
 
@@ -96,7 +98,8 @@ public function titleAction(Request $request)
        
     }
         }
-             
+        
+ 
   
         return $this->render('result.html.twig', array(
             'url' => $url,
@@ -105,10 +108,25 @@ public function titleAction(Request $request)
             'tags' => $tags,
             'alts' => $alts,
             'form' => $form->createView(),
-      
             
         ));   
     }
 
- 
+ public function pdfAction()
+    {
+  
+$dompdf = new DOMPDF();  //if you use namespaces you may use new \DOMPDF()
+$dompdf->loadHtmlFile('http://www.google.com');
+$dompdf->render();
+$dompdf->stream("sample.pdf", array("Attachment"=>0));
+
+
+return $this->render('pdf.html.twig', array(
+            'dompdf' => $dompdf,
+            
+            
+        ));   
+
+    } 
+      
 }

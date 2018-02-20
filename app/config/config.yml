@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi: ~
-    translator: { fallbacks: ['%locale%'] }
+    #translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -30,22 +30,23 @@ framework:
     assets: ~
     php_errors:
         log: true
+        
     templating:
-        engines: ['twig']
+        engines: ['twig']    
+
 # Twig Configuration
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     form_themes:
         - 'bootstrap_3_layout.html.twig'
-
 # Doctrine Configuration
 doctrine:
     dbal:
         driver: pdo_mysql
         host: 'localhost'
         port: '%database_port%'
-        dbname: 'projet'
+        dbname: 'symfony'
         user: 'root'
         password: 'kelkox'
         charset: UTF8
@@ -71,5 +72,14 @@ swiftmailer:
     
 assetic:
   debug:          '%kernel.debug%'
-  use_controller: '%kernel.debug%'    
-    
+  use_controller: '%kernel.debug%'
+  
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     /usr/local/bin/wkhtmltopdf #"\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\"" for Windows users
+        options:    []
+    image:
+        enabled:    true
+        binary:     /usr/local/bin/wkhtmltoimage #"\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\"" for Windows users
+        options:    []  
