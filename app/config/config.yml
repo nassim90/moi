@@ -40,6 +40,8 @@ twig:
     strict_variables: '%kernel.debug%'
     form_themes:
         - 'bootstrap_3_layout.html.twig'
+    globals:
+      pathToWeb: "%kernel.root_dir%/../web"    
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -71,15 +73,31 @@ swiftmailer:
     spool: { type: memory }
     
 assetic:
-  debug:          '%kernel.debug%'
-  use_controller: '%kernel.debug%'
-  
+    filters:
+        cssrewrite: ~
+        scss: ~
+        yui_css:
+            jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.6.jar
+        yui_js:
+            jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.6.jar
+    
+        uglifyjs2:
+            bin: /usr/local/bin/uglifyjs        
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+# Windows configuration
 knp_snappy:
     pdf:
         enabled:    true
-        binary:     /usr/local/bin/wkhtmltopdf #"\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\"" for Windows users
+        # If you have wkhtmltopdf as an environment variable you don't need to provide the
+        # full path to the executable, use it in the same way as you use in the console
+        #binary:  "wkhtmltopdf"
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
         options:    []
     image:
         enabled:    true
-        binary:     /usr/local/bin/wkhtmltoimage #"\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\"" for Windows users
-        options:    []  
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
+        options:    []
+        
+        
+        

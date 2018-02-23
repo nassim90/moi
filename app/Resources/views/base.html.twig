@@ -6,19 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>        
     <link rel="stylesheet" type="text/css" href="...vendor/bootstrap/css/bootstrap.min.css" />
+
+        <base href="{{ app.request.scheme ~ '://' ~ app.request.httpHost }}" />
     
 {% block stylesheets %}
-                     {% stylesheets 
+
+                     {% stylesheets output='http://localhost:8080/my_project/web/css/app.css' filter='?yui_css scss'
+'scss/app.scss' 
   'vendor/bootstrap/css/bootstrap.min.css'
   'css/font-awesome/css/font-awesome.min.css'
                      'css/google2.css'%}
-  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+  <link rel="stylesheet" href="   {{  asset_url  }}" type="text/css" media="all"/>
                      {% endstylesheets %}
+                     
 {% endblock %}
    
-{% javascripts 'vendor/bootstrap/js/bootstrap.min.js'
+{% javascripts'http://localhost:8080/my_project/web/vendor/js/bootstrap*' output='bootstrap/js/bootstrap.min.js'
 %}
-  <script type="text/javascript" src="{{ asset_url }}"></script>
+  <script type="text/javascript" src="   {{  asset_url   }}"></script>
 {% endjavascripts %}
     
  
@@ -72,12 +77,15 @@
     
     
 {% endblock %}
-  {% block javascripts %}
-        
-    <script type="text/javascript" src="{{ asset('vendor/js/jquery2.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+{% javascripts 'http://localhost:8080/my_project/web/vendor/js/*' output='js/jquery2.js' %}
+    <script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+  {% javascripts 'http://localhost:8080/my_project/web/vendor/js/bootstrap*' output='bootstrap/js/bootstrap.min.js' %}
+    <script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+   
     
-    {% endblock %}
+   
 </body>
 </html>
      

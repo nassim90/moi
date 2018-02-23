@@ -7,13 +7,15 @@ form:
     defaults: { _controller: AppBundle:Default:form }
     
 title:
-    path:     /result
+    path:      /result
     defaults: { _controller: AppBundle:Default:title }
     
 
-pdf:
+    
+sandbox_pdfexample:
     path:     /pdf
     defaults: { _controller: AppBundle:Default:pdf }    
+
 
     
    
